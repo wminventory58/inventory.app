@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking - Inventory App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Count Tracking</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <!-- <a href="count.html">Count</a>--> 
+      </nav>
+    </header>
+    <main id="app" class="app-container">
+      <section class="control-panel" id="tracking-controls">
+        <div class="control-panel-buttons">
+          <button id="export-excel-btn" class="btn btn-secondary">
+            Export to Excel
+          </button>
+        </div>
+      </section>
+
+      <section class="item-list-container">
+        <table class="item-list-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Part #</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>UOM</th>
+              <th>Quantity</th>
+              <th>Notes</th>
+              <th>Timestamp</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tracking-log-body">
+            <!-- Count entries will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="./js/lib/xlsx.full.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/tracking.js"></script>
+  </body>
+</html>

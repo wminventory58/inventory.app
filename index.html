@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Counting App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Inventory Counting App</h1>
+    </header>
+
+    <main id="app" class="app-container">
+      <section class="dashboard">
+        <div class="unified-control-panel">
+          <div class="control-panel-buttons">
+            <button id="downloadMasterBtn" class="btn btn-secondary">Download Master List (CSV)</button>
+            <button id="import-csv-btn" class="btn btn-secondary">Import Master List (CSV)</button>
+            <button id="export-excel-btn" class="btn btn-secondary">Export Master List (Excel)</button>
+            <button id="addItemBtn" class="btn" disabled>Add New Item</button>
+            <a href="tracking.html" class="btn btn-primary">Counts</a>
+          </div>
+          <div class="search-and-user-panel">
+            <div id="counted-by-panel">
+              <label for="user-name">Counted By:</label>
+              <input type="text" id="user-name" placeholder="Your Name" required />
+              <label for="count-date">Date:</label>
+              <input type="date" id="count-date" />
+            </div>
+            <div class="search-filter-panel">
+              <div class="form-grid">
+                <select id="filter-category" title="Filter by category"></select>
+                <input type="text" id="filter-part-no" placeholder="Part #" />
+                <input type="text" id="filter-description" placeholder="Description" />
+                <input type="text" id="filter-vendor-item-no" placeholder="Vendor Item #" />
+                <input type="text" id="filter-vendor" placeholder="Vendor" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="item-list-container">
+        <table class="item-list-table">
+          <thead>
+            <tr>
+              <th>Part #</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th class="location-notes-col">Location</th>
+              <th>UOM</th>
+              <th>Quantity</th>
+              <th class="location-notes-col">Notes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="item-list-body">
+            <!-- Item rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <div id="addItemModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Add New Item</h2>
+        <form id="addItemForm">
+          <p id="modal-error-message" class="error-message"></p>
+          <div class="form-group">
+            <label for="partNo">Part #</label>
+            <input type="text" id="partNo" placeholder="Part #" />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              id="description"
+              placeholder="Description"
+            />
+          </div>
+          <div class="form-group">
+            <label for="modal-category">Category</label>
+            <select id="modal-category"></select>
+          </div>
+          <div class="form-group">
+            <label for="vendorItemNo">Vendor Item #</label>
+            <input
+              type="text"
+              id="vendorItemNo"
+              placeholder="Vendor Item #"
+            />
+          </div>
+          <div class="form-group">
+            <label for="vendor">Vendor</label>
+            <input type="text" id="vendor" placeholder="Vendor" />
+          </div>
+          <div class="form-group">
+            <label for="modal-location">Location</label>
+            <select id="modal-location"></select>
+          </div>
+          <div class="form-group">
+            <label for="modal-uom">UOM</label>
+            <select id="modal-uom"></select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" placeholder="Quantity" />
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" placeholder="Notes"></textarea>
+          </div>
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary cancel-btn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/lib/papaparse.min.js"></script>
+    <script src="./js/lib/xlsx.full.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
