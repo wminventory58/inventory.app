@@ -137,7 +137,7 @@ function renderTable(data) {
       </td>
       <td><input type="number" class="quantity-input" data-id="${
         item["Part #"]
-      }" value="${item.Quantity || 0}"></td>
+      }" value="${item.Quantity || ""}"></td>
       <td class="location-notes-col"><input type="text" class="notes-input" data-id="${
         item["Part #"]
       }" value="${item.Notes || ""}"></td>
