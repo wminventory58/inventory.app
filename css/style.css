@@ -169,11 +169,14 @@ body {
   min-width: 150px; /* Shared width for Location and Notes */
 }
 
-.item-list-table input[type="text"] {
+.item-list-table input[type="text"],
+.item-list-table input[type="number"],
+.item-list-table select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #dce4e8;
   border-radius: 4px;
+  height: 45px; /* Increased height for better tablet interaction */
 }
 
 .input-error {
