@@ -406,3 +406,28 @@ label.is-required {
 
 
 
+
+/* Tracking page icon button styles */
+.btn-edit,
+.btn-delete,
+.btn-save,
+.btn-cancel {
+  font-size: 1.5rem; /* Increase icon size */
+  padding: 0.5rem; /* Add padding for a larger clickable area */
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-edit:hover,
+.btn-save:hover {
+  color: #007bff; /* Blue for edit/save */
+  transform: scale(1.2);
+}
+
+.btn-delete:hover,
+.btn-cancel:hover {
+  color: #dc3545; /* Red for delete/cancel */
+  transform: scale(1.2);
+}
