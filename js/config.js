@@ -1,4 +1,4 @@
-const UOM_LIST = ["BOX", "CAD", "CS", "EA", "HNK", "KG", "LB", "RCK", "RL"];
+const UOM_LIST = ["BDL", "BOX", "CAD", "CS", "EA", "HNK", "KG", "L", "LB", "RCK", "RL"];
 const CATEGORY_LIST = [
       "Berkshire Chris",
       "Box",
