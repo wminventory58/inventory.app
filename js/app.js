@@ -290,10 +290,10 @@ itemListBody.addEventListener("click", (event) => {
     }, 1500);
 
     // Clear the input fields for the submitted row
-    quantityInput.value = "0";
-    uomSelect.selectedIndex = 0;
-    locationSelect.selectedIndex = 0;
+    quantityInput.value = "";
     notesInput.value = "";
+    locationSelect.selectedIndex = 0; // Reset to the default blank option
+    uomSelect.value = item.UOM || ""; // Reset UOM to the master item's default
   }
 });
 
